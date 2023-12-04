@@ -932,7 +932,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899712685}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2938,116 +2938,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &632110790243101168
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.59700006
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.49099994
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 947362495727788886, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564184956260727737, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_Name
-      value: TennisFollow
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564184956260727737, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1564184956260727737, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 632110790243101170}
-  m_SourcePrefab: {fileID: 100100000, guid: 306e337b95f7547c9a2f6562cffb2ddf, type: 3}
---- !u!1 &632110790243101169 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1564184956260727737, guid: 306e337b95f7547c9a2f6562cffb2ddf,
-    type: 3}
-  m_PrefabInstance: {fileID: 632110790243101168}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &632110790243101170
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632110790243101169}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3059,4 +2949,3 @@ SceneRoots:
   - {fileID: 1143022868}
   - {fileID: 240984193}
   - {fileID: 1126234935}
-  - {fileID: 632110790243101168}
