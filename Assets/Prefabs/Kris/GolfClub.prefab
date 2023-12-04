@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1048504746824020503}
   - component: {fileID: 474129878945468325}
   - component: {fileID: 2318316380252724886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 6645882534570551768}
   - component: {fileID: 6967544087676009244}
   - component: {fileID: 9129706489365290641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fairways
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fea8df12b073dd9419d823828bd714e8, type: 2}
+  - {fileID: 2100000, guid: 98e5d45e2fb2e5744ba613fcd9ba0b65, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 3914049558811675891}
   - component: {fileID: 2505334487591172671}
   - component: {fileID: 7925865489971090675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 5772118130745736690}
   - component: {fileID: 4909572521192530565}
   - component: {fileID: 230902319018806498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GolfClub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6580179581104334664}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 8988842668331763175}
   - component: {fileID: 8783728771650480384}
   - component: {fileID: 5183557043148064637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube1
   m_TagString: ClubHead
   m_Icon: {fileID: 0}
@@ -639,5 +639,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.06718734, y: 0.06694309, z: 0.13338389}
-  m_Center: {x: 0.0030103475, y: -0.0044395155, z: -0.0017632543}
+  m_Size: {x: 0.07576917, y: 0.06694309, z: 0.13338389}
+  m_Center: {x: -0.0012805685, y: -0.004439514, z: -0.0017632544}
