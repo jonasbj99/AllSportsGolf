@@ -1243,33 +1243,6 @@ MonoBehaviour:
   m_RayInteractorChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1008696150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6821251116075379157, guid: 00057d8f6acf2774985de9ca1ecb3076,
-    type: 3}
-  m_PrefabInstance: {fileID: 1647979939}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1008696155
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008696150}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.06718734, y: 0.06694309, z: 0.13338389}
-  m_Center: {x: 0.0030103475, y: -0.0044395155, z: -0.0017632543}
 --- !u!1 &1019930254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,7 +1795,7 @@ GameObject:
   - component: {fileID: 1143022867}
   - component: {fileID: 1143022866}
   - component: {fileID: 1143022865}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2510,6 +2483,11 @@ PrefabInstance:
       propertyPath: ballSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2769699082726891482, guid: 4214ff5211ffb40409ea0453f3cc0f67,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3000540284535563323, guid: 4214ff5211ffb40409ea0453f3cc0f67,
         type: 3}
       propertyPath: m_Material
@@ -2524,7 +2502,7 @@ PrefabInstance:
     - target: {fileID: 7044307339197028360, guid: 4214ff5211ffb40409ea0453f3cc0f67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.242
+      value: -0.391
       objectReference: {fileID: 0}
     - target: {fileID: 7044307339197028360, guid: 4214ff5211ffb40409ea0453f3cc0f67,
         type: 3}
@@ -2576,6 +2554,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golf_ball_HighPOly
       objectReference: {fileID: 0}
+    - target: {fileID: 8181145992685151079, guid: 4214ff5211ffb40409ea0453f3cc0f67,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d0528d1e4db685645aab785abb903b19, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2594,10 +2577,30 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1998777264}
+    - target: {fileID: 2189013178901660132, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909572521192530565, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909572521192530565, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437251737658426692, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5772118130745736690, guid: 00057d8f6acf2774985de9ca1ecb3076,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.473
+      value: -0.563
       objectReference: {fileID: 0}
     - target: {fileID: 5772118130745736690, guid: 00057d8f6acf2774985de9ca1ecb3076,
         type: 3}
@@ -2644,19 +2647,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6407374132622206529, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6580179581104334664, guid: 00057d8f6acf2774985de9ca1ecb3076,
         type: 3}
       propertyPath: m_Name
-      value: fairways
+      value: GolfClub
       objectReference: {fileID: 0}
+    - target: {fileID: 6580179581104334664, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821251116075379157, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129706489365290641, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 98e5d45e2fb2e5744ba613fcd9ba0b65, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6821251116075379157, guid: 00057d8f6acf2774985de9ca1ecb3076,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1008696155}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00057d8f6acf2774985de9ca1ecb3076, type: 3}
 --- !u!1 &1684349208
 GameObject:

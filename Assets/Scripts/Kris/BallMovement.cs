@@ -8,11 +8,13 @@ public class BallMovement : MonoBehaviour
     public float ballLift = 2f;
     private Rigidbody ballRB;
 
+    private Vector3 startPos;
+
 
     // Start is called before the first frame update
     void Start()
     {
-       
+       startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -24,9 +26,14 @@ public class BallMovement : MonoBehaviour
             ballRB.AddForce(Vector3.forward * -ballSpeed, ForceMode.Impulse);
         }
 
-        if(transform.position.y < 1)
+        /*if(transform.position.y < 1)
         {
             
+        }*/
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.position = startPos;
         }
     }
 
