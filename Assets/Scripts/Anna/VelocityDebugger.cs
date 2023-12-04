@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VelocityDebugger : MonoBehaviour
 {
-
+    //https://www.youtube.com/watch?v=j19QDOn2cCc used for inspiration
     [SerializeField]
     private float maxVelocity = 20f;
 

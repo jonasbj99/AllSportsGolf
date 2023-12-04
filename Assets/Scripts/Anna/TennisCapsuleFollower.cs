@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TennisCapsuleFollower : MonoBehaviour
 {
+    ////https://www.youtube.com/watch?v=j19QDOn2cCc used for inspiration
+
     private TennisCapsule _tennisFollower;
     //Rigidbody og Vector3 skal være blå ligesom Tenniscollider over
     private Rigidbody _rigidbody;
