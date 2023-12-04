@@ -2651,20 +2651,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1998777264}
-    - target: {fileID: 2189013178901660132, guid: 00057d8f6acf2774985de9ca1ecb3076,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4909572521192530565, guid: 00057d8f6acf2774985de9ca1ecb3076,
         type: 3}
       propertyPath: m_Mass
-      value: 30000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437251737658426692, guid: 00057d8f6acf2774985de9ca1ecb3076,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5772118130745736690, guid: 00057d8f6acf2774985de9ca1ecb3076,
         type: 3}
@@ -2716,25 +2706,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6407374132622206529, guid: 00057d8f6acf2774985de9ca1ecb3076,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6580179581104334664, guid: 00057d8f6acf2774985de9ca1ecb3076,
         type: 3}
       propertyPath: m_Name
       value: GolfClub
-      objectReference: {fileID: 0}
-    - target: {fileID: 6580179581104334664, guid: 00057d8f6acf2774985de9ca1ecb3076,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6821251116075379157, guid: 00057d8f6acf2774985de9ca1ecb3076,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
