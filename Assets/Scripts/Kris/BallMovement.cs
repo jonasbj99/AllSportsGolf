@@ -8,8 +8,8 @@ public class BallMovement : MonoBehaviour
     public float ballLift = 2f;
     private Rigidbody ballRB;
     private Vector3 startPos;
-    public float reduceSpeed = 1f;
-    public float reduceRotate = 1f;
+    public float reduceSpeed = 5f;
+    public float reduceRotate = 5f;
 
 
     // Start is called before the first frame update
@@ -38,13 +38,22 @@ public class BallMovement : MonoBehaviour
             ResetToStartPosition();
         }
 
-        if(transform.position.y < 0.5f)
+        if(transform.position.y < 0.5f && ballRB.velocity.magnitude > 0.4f)
         {
             Vector3 reduceSpeedForce = -ballRB.velocity.normalized * reduceSpeed;
             ballRB.AddForce(reduceSpeedForce, ForceMode.Acceleration);
+        }
 
+        if(ballRB.angularVelocity.magnitude > 0.4f)
+        {
             Vector3 reduceRotateTorque = -ballRB.angularVelocity.normalized * reduceRotate;
             ballRB.AddTorque(reduceRotateTorque, ForceMode.Acceleration);
+        }
+
+        if(ballRB.velocity.magnitude < 0.5f)
+        {
+            ballRB.velocity = Vector3.zero;
+            ballRB.angularVelocity = Vector3.zero;
         }
     }
 
