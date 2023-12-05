@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5196644568183992822}
   - component: {fileID: 5833230787804113462}
   - component: {fileID: 8944164370319975007}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArrowModel
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,9 +142,9 @@ GameObject:
   - component: {fileID: 4678840768958105298}
   - component: {fileID: 4828648652890129425}
   - component: {fileID: 3375139689418098056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4288991832165969990}
   - component: {fileID: 4137759092139705681}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArrowTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
