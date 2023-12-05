@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ArrowController : MonoBehaviour
+{
+    [SerializeField] GameObject stringPullVisual, arrowPrefab, arrowSpawnPoint;
+    [SerializeField] float arrowMaxSpeed = 10;
+
+    public void PrepareArrow()
+    {
+        stringPullVisual.SetActive(true);
+    }
+
+    public void ReleaseArrow(float strength)
+    {
+        stringPullVisual.SetActive(false);
+
+        GameObject arrow = Instantiate(arrowPrefab);
+        arrow.transform.position = arrowSpawnPoint.transform.position;
+        arrow.transform.rotation = stringPullVisual.transform.rotation;
+        Rigidbody rb = arrow.GetComponent<Rigidbody>();
+        rb.AddForce(stringPullVisual.transform.forward * strength * arrowMaxSpeed, ForceMode.Impulse);
+    }
+}
