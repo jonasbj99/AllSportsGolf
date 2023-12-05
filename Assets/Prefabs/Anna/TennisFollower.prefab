@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fddf59898cd64d40adaabd39d7aacb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sensitivity: 100
 --- !u!54 &7134577711140381493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,3 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8622e57ead3c0402690dd354ceb048d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVelocity: 20
