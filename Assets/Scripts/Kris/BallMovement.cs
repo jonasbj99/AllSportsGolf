@@ -17,6 +17,9 @@ public class BallMovement : MonoBehaviour
     public float reduceSpeed = 5f;
     public float reduceRotate = 5f;
 
+    //indsæt i GameManager script
+    public static Vector3 golfBallPos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -129,6 +132,8 @@ public class BallMovement : MonoBehaviour
             // Measures speed added to ball when hit by the golf club
             Debug.Log("Ball speed: " + newBallSpeed);
             
+            methodDone = false;
+            
         }
     }
 
@@ -138,6 +143,7 @@ public class BallMovement : MonoBehaviour
         float dist = Vector3.Distance(prevPos, currentPos);
         Debug.Log("Distance " + dist);
         prevPos = currentPos;
+        golfBallPos = currentPos;
         methodDone = true;
     }
 
