@@ -2583,6 +2583,11 @@ PrefabInstance:
       propertyPath: clubRB
       value: 
       objectReference: {fileID: 1910947489}
+    - target: {fileID: 2769699082726891482, guid: 4214ff5211ffb40409ea0453f3cc0f67,
+        type: 3}
+      propertyPath: golfSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6eb1523d0e9c8de44ae7fe4b61ffd867, type: 3}
     - target: {fileID: 4209638438661976530, guid: 4214ff5211ffb40409ea0453f3cc0f67,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -2668,7 +2673,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6eb1523d0e9c8de44ae7fe4b61ffd867, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

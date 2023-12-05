@@ -20,6 +20,9 @@ public class BallMovement : MonoBehaviour
     //indsæt i GameManager script
     public static Vector3 golfBallPos;
 
+    private AudioSource golfAudio;
+    public AudioClip golfSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class BallMovement : MonoBehaviour
        prevPos = startPos;
        ballRB = GetComponent<Rigidbody>();
        clubRB = GetComponent<Rigidbody>();
+       golfAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -133,6 +137,8 @@ public class BallMovement : MonoBehaviour
             Debug.Log("Ball speed: " + newBallSpeed);
             
             methodDone = false;
+
+            golfAudio.PlayOneShot(golfSound, 1f);
             
         }
     }
