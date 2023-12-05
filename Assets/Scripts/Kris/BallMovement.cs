@@ -112,7 +112,7 @@ public class BallMovement : MonoBehaviour
             //ballRB.AddForce(Vector3.forward * -ballSpeed, ForceMode.Impulse);
 
             // Measures speed added to ball when hit be the golf club
-            Debug.Log("Swing speed " + newBallSpeed);
+            Debug.Log("Ball speed: " + newBallSpeed);
             
         }
     }
