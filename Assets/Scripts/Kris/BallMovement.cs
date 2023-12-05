@@ -72,12 +72,12 @@ public class BallMovement : MonoBehaviour
             
         }
 
-        if(ballRB.velocity.magnitude < 0.001f && currentPos.z != startPos.z)
+        if(ballRB.velocity.magnitude > 1f && currentPos.z != startPos.z)
         {
             isBallMoving = true;
         }
         // Measurres distance of the ball from start to its current position
-        if(isBallMoving == true && methodDone == false)
+        if(isBallMoving == true && methodDone == false && ballRB.velocity.magnitude < 0.01f)
         {
             MeasureDistanceOfBall();
             
@@ -85,6 +85,7 @@ public class BallMovement : MonoBehaviour
 
         currentPos = transform.position;
 
+        // skal rettes/slettes 
         if(currentPos.z > 1.1f)
         {
             ResetToStartPosition();
@@ -138,7 +139,7 @@ public class BallMovement : MonoBehaviour
             
             methodDone = false;
 
-            golfAudio.PlayOneShot(golfSound, 1f);
+            golfAudio.PlayOneShot(golfSound, 0.6f);
             
         }
     }
