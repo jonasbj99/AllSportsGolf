@@ -11,6 +11,9 @@ public class BallMovement : MonoBehaviour
     public Rigidbody clubRB;
     private Vector3 startPos;
     private Vector3 currentPos;
+    private Vector3 prevPos;
+    private bool isBallMoving = false;
+    private bool methodDone = false;
     public float reduceSpeed = 5f;
     public float reduceRotate = 5f;
 
@@ -19,6 +22,7 @@ public class BallMovement : MonoBehaviour
     void Start()
     {
        startPos = transform.position;
+       prevPos = startPos;
        ballRB = GetComponent<Rigidbody>();
        clubRB = GetComponent<Rigidbody>();
     }
@@ -26,8 +30,6 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentPos = transform.position;
-
         /*if(Input.GetKeyDown(KeyCode.Space))
         {
             ballRB.AddForce(Vector3.up * ballLift, ForceMode.Impulse);
@@ -62,10 +64,23 @@ public class BallMovement : MonoBehaviour
 
             
         }
-        // virker ikke som det skal
-        if(ballRB.velocity.magnitude !> 0 && currentPos != startPos)
+
+        if(ballRB.velocity.magnitude < 0.001f && currentPos.z != startPos.z)
+        {
+            isBallMoving = true;
+        }
+        // Measurres distance of the ball from start to its current position
+        if(isBallMoving == true && methodDone == false)
         {
             MeasureDistanceOfBall();
+            
+        }
+
+        currentPos = transform.position;
+
+        if(currentPos.z > 1.1f)
+        {
+            ResetToStartPosition();
         }
 
     }
@@ -111,7 +126,7 @@ public class BallMovement : MonoBehaviour
 
             //ballRB.AddForce(Vector3.forward * -ballSpeed, ForceMode.Impulse);
 
-            // Measures speed added to ball when hit be the golf club
+            // Measures speed added to ball when hit by the golf club
             Debug.Log("Ball speed: " + newBallSpeed);
             
         }
@@ -120,8 +135,10 @@ public class BallMovement : MonoBehaviour
     private void MeasureDistanceOfBall()
     {
         // Measures distance from start position to current position of the ball
-        float dist = Vector3.Distance(startPos, currentPos);
+        float dist = Vector3.Distance(prevPos, currentPos);
         Debug.Log("Distance " + dist);
+        prevPos = currentPos;
+        methodDone = true;
     }
 
 }

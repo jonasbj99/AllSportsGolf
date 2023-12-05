@@ -2656,6 +2656,16 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1998777264}
+    - target: {fileID: 5183557043148064637, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.09466374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183557043148064637, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.012507737
+      objectReference: {fileID: 0}
     - target: {fileID: 5772118130745736690, guid: 00057d8f6acf2774985de9ca1ecb3076,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2710,6 +2720,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GolfClub
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783728771650480384, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988842668331763175, guid: 00057d8f6acf2774985de9ca1ecb3076,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
