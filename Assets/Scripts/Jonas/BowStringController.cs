@@ -10,12 +10,17 @@ public class BowStringController : MonoBehaviour
 {
     [SerializeField] Transform stringPullGrab, stringPullVisual, stringPullPoint;
     [SerializeField] BowString bowStringRenderer;
-    [SerializeField] float stringLimit = 0.45f;
+    [SerializeField] float stringLimit = 0.42f;
 
-    float stringStrength;
+    float stringStrength, previousStrength;
+
+    [SerializeField] AudioSource stringAudioSource;
+    [SerializeField] float stringSoundThreshold = 0.001f;
 
     public UnityEvent OnBowPulled;
     public UnityEvent<float> OnBowReleased;
+
+    [SerializeField] SkinnedMeshRenderer handMesh;
 
     XRGrabInteractable interactable;
     Transform interactor;
@@ -41,6 +46,8 @@ public class BowStringController : MonoBehaviour
             // Get the offset
             float pullPointLocalAbsZ = Mathf.Abs(pullPointLocalSpace.z);
 
+            previousStrength = stringStrength;
+
             FixStringPush(pullPointLocalSpace);
 
             FixStringToLimit(pullPointLocalAbsZ, pullPointLocalSpace);
@@ -48,54 +55,91 @@ public class BowStringController : MonoBehaviour
             FixStringPull(pullPointLocalAbsZ, pullPointLocalSpace);
 
             bowStringRenderer.CreateString(stringPullVisual.position);
+
+            handMesh.enabled = false;
         }
     }
 
-    private void PrepareString(SelectEnterEventArgs arg0)
+    void PrepareString(SelectEnterEventArgs arg0)
     {
         interactor = arg0.interactorObject.transform;
         OnBowPulled?.Invoke();
     }
 
-    private void RestingString(SelectExitEventArgs arg0)
+    void RestingString(SelectExitEventArgs arg0)
     {
         OnBowReleased?.Invoke(stringStrength);
         stringStrength = 0;
+        previousStrength = 0;
+        stringAudioSource.pitch = 1;
+        stringAudioSource.Stop();
 
         interactor = null;
         stringPullGrab.localPosition = Vector3.zero;
         stringPullVisual.localPosition = Vector3.zero;
         bowStringRenderer.CreateString(null);
+
+        handMesh.enabled = true;
     }
 
-    private void FixStringPush(Vector3 pullPointLocalSpace)
+    void FixStringPush(Vector3 pullPointLocalSpace)
     {
         if (pullPointLocalSpace.z >= 0)
         {
+            stringAudioSource.pitch = 1;
+            stringAudioSource.Stop();
             stringStrength = 0;
             stringPullVisual.localPosition = Vector3.zero;
         }
     }
 
-    private void FixStringToLimit(float pullPointLocalAbsZ, Vector3 pullPointLocalSpace)
+    void FixStringToLimit(float pullPointLocalAbsZ, Vector3 pullPointLocalSpace)
     {
         if (pullPointLocalSpace.z < 0 && pullPointLocalAbsZ >= stringLimit)
         {
+            stringAudioSource.Pause();
             stringStrength = 1;
             stringPullVisual.localPosition = new Vector3(0, 0, -stringLimit);
         }
     }
 
-    private void FixStringPull(float pullPointLocalAbsZ, Vector3 pullPointLocalSpace)
+    void FixStringPull(float pullPointLocalAbsZ, Vector3 pullPointLocalSpace)
     {
         if (pullPointLocalSpace.z < 0 && pullPointLocalAbsZ < stringLimit)
         {
+            if(stringAudioSource.isPlaying == false && stringStrength <= 0.01f)
+            {
+                stringAudioSource.Play();
+            }
+
             stringStrength = Remap(pullPointLocalAbsZ, 0, stringLimit, 0, 1);
             stringPullVisual.localPosition = new Vector3(0, 0, pullPointLocalSpace.z);
+
+            PlayPullSound();
         }
     }
 
-    private float Remap(float value, int fromMin, float fromMax, int toMin, int toMax)
+    void PlayPullSound()
+    {
+        if (Mathf.Abs(stringStrength - previousStrength) > stringSoundThreshold)
+        {
+            if (stringStrength < previousStrength)
+            {
+                stringAudioSource.pitch = -1;
+            }
+            else
+            {
+                stringAudioSource.pitch = 1;
+            }
+            stringAudioSource.UnPause();
+        }
+        else
+        {
+            stringAudioSource.Pause();
+        }
+    }
+
+    float Remap(float value, int fromMin, float fromMax, int toMin, int toMax)
     {
         return (value - fromMin) / (fromMax - fromMin) * (toMax - toMin) + (toMin);
     }
