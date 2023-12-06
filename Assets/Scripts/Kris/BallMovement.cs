@@ -16,12 +16,16 @@ public class BallMovement : MonoBehaviour
     private bool methodDone = false;
     public float reduceSpeed = 5f;
     public float reduceRotate = 5f;
+    private float minSpeed = 10;
+    private float maxSpeed = 40;
+
+    private AudioSource golfAudio;
+    public AudioClip golfSound;
 
     //indsæt i GameManager script
     public static Vector3 golfBallPos;
 
-    private AudioSource golfAudio;
-    public AudioClip golfSound;
+    
 
 
     // Start is called before the first frame update
@@ -125,6 +129,8 @@ public class BallMovement : MonoBehaviour
 
             // Adjust ballSpeed based on the velocity of the golf club's swing
             float newBallSpeed = ballSpeed * clubRB.GetComponent<Rigidbody>().velocity.magnitude * ballSpeedMultiplier;
+
+            newBallSpeed = Mathf.Clamp(newBallSpeed, minSpeed, maxSpeed);
 
             // Add force in the direction of the side of the collider with adjusted speed
             ballRB.AddForce(colliderDirection * newBallSpeed, ForceMode.Impulse);
