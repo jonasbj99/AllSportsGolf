@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class RigController : MonoBehaviour
 {
+    XRIDefaultInputActions xriControls;
+
+    [SerializeField] GameObject wristMenu;
+    [SerializeField] XRRayInteractor rayInteractor;
+
     [SerializeField] GameObject bow;
     [SerializeField] GameObject golf;
     [SerializeField] GameObject tennis;
@@ -19,42 +25,69 @@ public class RigController : MonoBehaviour
 
     private void Awake()
     {
+        xriControls = new XRIDefaultInputActions();
+
         bowSelected = false;
         golfSelected = false;
         tennisSelected = false;
         ballSelected = false;
     }
 
-    void Update()
+    private void OnEnable()
     {
-        if(bowSelected)
-        {
-            ActivateTool(bow);
-        }
-        else if(golfSelected)
-        {
-            ActivateTool(golf);
-        }
-        else if(tennisSelected)
-        {
-            ActivateTool(tennis);
-        }
-        else if(ballSelected)
-        {
-            ActivateTool(ball);
-        }
-
+        xriControls.Enable();
+    }
+    private void OnDisable()
+    {
+        xriControls.Disable();
     }
 
-    void ActivateTool(GameObject tool)
+    void Update()
+    {
+        if (xriControls.XRIButtons.X.ReadValue<float>() > 0)
+        {
+            wristMenu.SetActive(true);
+            rayInteractor.enabled = true;
+        }
+        else if (xriControls.XRIButtons.X.ReadValue<float>() <= 0)
+        {
+            wristMenu.SetActive(false);
+            rayInteractor.enabled = false;
+        }
+    }
+
+    void ActivateBow()
     {
         DeactivateTools();
 
-        tool.SetActive(true);
+        bow.SetActive(true);
+    }
+    void ActivateGolf()
+    {
+        DeactivateTools();
+
+        golf.SetActive(true);
+    }
+    void ActivateTennis()
+    {
+        DeactivateTools();
+
+        tennis.SetActive(true);
+    }
+    void ActivateBall()
+    {
+        DeactivateTools();
+
+        ball.SetActive(true);
     }
 
     void DeactivateTools()
     {
+        bowSelected = false;
+        golfSelected = false;
+        tennisSelected = false;
+        ballSelected = false;
+
         bow.SetActive(false);
         golf.SetActive(false);
         tennis.SetActive(false);
