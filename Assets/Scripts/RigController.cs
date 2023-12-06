@@ -16,21 +16,27 @@ public class RigController : MonoBehaviour
     [SerializeField] GameObject bow;
     [SerializeField] GameObject golf;
     [SerializeField] GameObject tennis;
-    [SerializeField] GameObject ball;
+    [SerializeField] GameObject throwBall;
 
-    public static bool bowSelected;
-    public static bool golfSelected;
-    public static bool tennisSelected;
-    public static bool ballSelected;
+
+    [SerializeField] GameObject[] ballPrefabs;
+
+    [SerializeField] Transform startTransform;
+    public static Transform currentTransform;
+    public static Transform previousTransform;
+
+    GameObject ball;
+    BallBehavior ballScript;
+
+    int shotCount;
+
+    int golfInt = 0;
+    int tennisInt = 1;
+    int ballInt = 2;
 
     private void Awake()
     {
         xriControls = new XRIDefaultInputActions();
-
-        bowSelected = false;
-        golfSelected = false;
-        tennisSelected = false;
-        ballSelected = false;
     }
 
     private void OnEnable()
@@ -40,6 +46,12 @@ public class RigController : MonoBehaviour
     private void OnDisable()
     {
         xriControls.Disable();
+    }
+
+    void Start()
+    {
+        shotCount = 0;
+        previousTransform = startTransform;
     }
 
     void Update()
@@ -62,22 +74,46 @@ public class RigController : MonoBehaviour
         leftHandMesh.SetActive(false);
         bow.SetActive(true);
     }
+
     public void ActivateGolf()
     {
         DeactivateTools();
         rightHandMesh.SetActive(false);
         golf.SetActive(true);
+        // Spawn Ball
     }
+
     public void ActivateTennis()
     {
         DeactivateTools();
         rightHandMesh.SetActive(false);
         tennis.SetActive(true);
+        //Spawn Ball
     }
+
     public void ActivateBall()
     {
         DeactivateTools();
         ball.SetActive(true);
+        //Spawn Ball
+    }
+
+    public void NextButton()
+    {
+        ball = FindObjectOfType<BallBehavior>().gameObject;
+        ballScript = ball.GetComponent<BallBehavior>();
+        ballScript.BallDestroy();
+        previousTransform = currentTransform;
+        shotCount += 1;
+        // TP player
+    }
+
+    public void ResetButton()
+    {
+        ball = FindObjectOfType<BallBehavior>().gameObject;
+        ballScript = ball.GetComponent<BallBehavior>();
+        ballScript.BallReset();
+        shotCount += 1;
     }
 
     public void DeactivateTools()
@@ -85,14 +121,14 @@ public class RigController : MonoBehaviour
         leftHandMesh.SetActive(true);
         rightHandMesh.SetActive(true);
 
-        bowSelected = false;
-        golfSelected = false;
-        tennisSelected = false;
-        ballSelected = false;
-
         bow.SetActive(false);
         golf.SetActive(false);
         tennis.SetActive(false);
         ball.SetActive(false); 
+    }
+
+    public void NewBall(int ballType)
+    {
+        Instantiate(ballPrefabs[ballType], previousTransform.position, Quaternion.identity);
     }
 }
