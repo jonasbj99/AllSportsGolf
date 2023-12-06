@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FinishGame : MonoBehaviour
 {
+    private bool gameHasEnded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,18 @@ public class FinishGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.CompareTag("GolfBall"))
+        if(other.CompareTag("GolfBall") && gameHasEnded == false)
         {
+            GameOver();
+            
             Debug.Log("Game Over");
         }
     }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0f;
+        gameHasEnded = true;
+    }
+
 }
