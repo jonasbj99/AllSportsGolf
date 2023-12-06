@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31988698, g: 0.2583933, b: 0.36811996, a: 1}
+  m_IndirectSpecularColor: {r: 0.32024902, g: 0.25871724, b: 0.36858445, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2067,7 +2067,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.29574946, z: -0, w: 0.9552656}
   m_LocalPosition: {x: -2.8223, y: 0, z: -1.7993}
-  m_LocalScale: {x: 0.45, y: 0.05, z: 0.01}
+  m_LocalScale: {x: 0.21, y: 0.05, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1393200663}
@@ -20148,7 +20148,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.2965001, z: -0, w: 0.9550329}
   m_LocalPosition: {x: -2.4461, y: 0, z: -1.8164}
-  m_LocalScale: {x: 0.45, y: 0.05, z: 0.01}
+  m_LocalScale: {x: 0.21, y: 0.05, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1393200663}
@@ -33602,7 +33602,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.49072742, z: -0, w: 0.87131315}
   m_LocalPosition: {x: -3.0803, y: 0, z: -2.1162}
-  m_LocalScale: {x: 0.45, y: 0.05, z: 0.01}
+  m_LocalScale: {x: 0.21, y: 0.05, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1393200663}
@@ -43769,7 +43769,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.45911887, z: -0, w: 0.88837487}
   m_LocalPosition: {x: -2.967, y: 0, z: -1.9421}
-  m_LocalScale: {x: 0.45, y: 0.05, z: 0.01}
+  m_LocalScale: {x: 0.21, y: 0.05, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1393200663}
@@ -49951,7 +49951,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.042789713, z: -0, w: 0.9990842}
   m_LocalPosition: {x: -2.6348, y: 0, z: -1.7495}
-  m_LocalScale: {x: 0.45, y: 0.05, z: 0.01}
+  m_LocalScale: {x: 0.21, y: 0.05, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1393200663}
