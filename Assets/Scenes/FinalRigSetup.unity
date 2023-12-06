@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 148141663}
   - component: {fileID: 148141664}
   - component: {fileID: 148141665}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: String
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 225135557}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: BowAttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,9 +618,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019930267}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1639896088}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -629,6 +629,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 40254389}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &461835094
 MonoBehaviour:
@@ -678,7 +690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507273790}
   - component: {fileID: 507273789}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ReleaseAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,6 +808,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1809331997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &666992959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 666992960}
+  m_Layer: 3
+  m_Name: Ball
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &666992960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666992959}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 941252215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &684644026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 83870ee58534e6649a62e44fcd1190f5,
@@ -816,7 +859,7 @@ GameObject:
   - component: {fileID: 685486260}
   - component: {fileID: 685486264}
   - component: {fileID: 685486263}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: StringPullGrab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1978,6 +2021,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &828361488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828361489}
+  m_Layer: 3
+  m_Name: Golf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &828361489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828361488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 941252215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &836636972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,6 +2630,9 @@ Transform:
   m_Children:
   - {fileID: 687861299}
   - {fileID: 937320541}
+  - {fileID: 828361489}
+  - {fileID: 1541080550}
+  - {fileID: 666992960}
   m_Father: {fileID: 450224956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &941252216
@@ -3434,6 +3511,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 450224956}
+  - {fileID: 2141859035}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1019930258
@@ -3671,9 +3749,9 @@ MonoBehaviour:
   wristMenu: {fileID: 762314213}
   rayInteractor: {fileID: 941252222}
   bow: {fileID: 1809331996}
-  golf: {fileID: 0}
-  tennis: {fileID: 0}
-  ball: {fileID: 0}
+  golf: {fileID: 828361488}
+  tennis: {fileID: 1541080549}
+  ball: {fileID: 666992959}
   toolSpawn: {fileID: 0}
   ballSpawn: {fileID: 0}
 --- !u!1 &1113261284
@@ -4023,7 +4101,7 @@ Transform:
   m_GameObject: {fileID: 1143022864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.347, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4038,7 +4116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1150205001}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: StringPullPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4072,7 +4150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161690967}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: TopEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4586,7 +4664,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1208013238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1639896088}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 40254389}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1208013238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4634,7 +4736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1239550192}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: StringPullVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5220,6 +5322,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521684880}
   m_CullTransparentMesh: 1
+--- !u!1 &1541080549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541080550}
+  m_Layer: 3
+  m_Name: Tennis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541080550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541080549}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 941252215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1580084144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,7 +5435,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1580084147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1639896088}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 40254389}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1019930267}
+        m_TargetAssemblyTypeName: RigController, Assembly-CSharp
+        m_MethodName: ActivateBow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1580084147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5462,7 +5631,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1681002729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1639896088}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 40254389}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1681002729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5651,13 +5844,13 @@ GameObject:
   - component: {fileID: 1809332000}
   - component: {fileID: 1809332001}
   - component: {fileID: 1809332002}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1809331997
 Transform:
   m_ObjectHideFlags: 0
@@ -5957,7 +6150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1828950980}
   - component: {fileID: 1828950981}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: BowStringAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6413,7 +6606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005333046}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ArrowSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6444,7 +6637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021370535}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: BotEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6465,6 +6658,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 148141662}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2141859034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141859035}
+  m_Layer: 3
+  m_Name: BallSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2141859035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141859034}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1019930257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652030460508
 Transform:
@@ -6508,7 +6732,7 @@ GameObject:
   - component: {fileID: 543450652030460508}
   - component: {fileID: 3469287838094585337}
   - component: {fileID: 1711813855172434227}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ArrowModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6526,7 +6750,7 @@ GameObject:
   - component: {fileID: 543450653238985923}
   - component: {fileID: 3469287837156543334}
   - component: {fileID: 1711813855578718124}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: BowModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

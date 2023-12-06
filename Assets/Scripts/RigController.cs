@@ -15,8 +15,7 @@ public class RigController : MonoBehaviour
     [SerializeField] GameObject tennis;
     [SerializeField] GameObject ball;
 
-    [SerializeField] Transform toolSpawn;
-    [SerializeField] Transform ballSpawn;
+    //[SerializeField] Transform ballSpawn;
 
     public static bool bowSelected;
     public static bool golfSelected;
@@ -56,25 +55,25 @@ public class RigController : MonoBehaviour
         }
     }
 
-    void ActivateBow()
+    public void ActivateBow()
     {
         DeactivateTools();
 
         bow.SetActive(true);
     }
-    void ActivateGolf()
+    public void ActivateGolf()
     {
         DeactivateTools();
 
         golf.SetActive(true);
     }
-    void ActivateTennis()
+    public void ActivateTennis()
     {
         DeactivateTools();
 
         tennis.SetActive(true);
     }
-    void ActivateBall()
+    public void ActivateBall()
     {
         DeactivateTools();
 
