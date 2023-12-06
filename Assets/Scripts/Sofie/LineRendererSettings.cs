@@ -40,6 +40,8 @@ public class LineRendererSettings : MonoBehaviour
 
     public bool AlignLineRenderer(LineRenderer rend)
     {
+        bool hitBtn = false;
+
         Ray ray;
         ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
@@ -47,15 +49,19 @@ public class LineRendererSettings : MonoBehaviour
         if (Physics.Raycast(ray, out hit, layerMask))
         {
             points[1] = transform.forward + new Vector3(0, 0, hit.distance);
-           
+            btn = hit.collider.gameObject.GetComponent<Button>();
+            hitBtn = true;
         }
         else
         {
             points[1] = transform.forward + new Vector3(0, 0, 20);
+            hitBtn =false;
           
         }
 
         rend.SetPositions(points);
+        rend.material.color = rend.startColor;
+        return hitBtn;
 
     }
 

@@ -1745,7 +1745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d243833a51caa4231951a7c0020eedf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
+  btn: {fileID: 0}
+  rend: {fileID: 941252222}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1019930254
 GameObject:
   m_ObjectHideFlags: 0
