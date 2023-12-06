@@ -6,7 +6,7 @@ public class ArrowRotation : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         transform.forward = Vector3.Slerp(transform.forward, rb.velocity.normalized, Time.fixedDeltaTime);
     }

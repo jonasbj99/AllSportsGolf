@@ -8,7 +8,7 @@ public class BowString : MonoBehaviour
     [SerializeField] Transform endpoint_1, endpoint_2;
     LineRenderer lineRenderer;
 
-    private void Awake()
+    void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
     }
@@ -27,7 +27,7 @@ public class BowString : MonoBehaviour
         lineRenderer.SetPositions(linePoints);
     }
 
-    private void Start()
+    void Start()
     {
         CreateString(null);
     }
