@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LineRendererSettings : MonoBehaviour
 {
-   
+    public Button btn;
     //Declare a LineRenderer to store the component attached to the GameObject
     [SerializeField] LineRenderer rend;
    
