@@ -24,7 +24,7 @@ public class LineRendererSettings : MonoBehaviour
         points = new Vector3[2];
 
         //set the start point of the linerenderer to the position of the gameObject.
-        points[0] = new Vector3.zero;
+        points[0] = Vector3.zero;
 
         //set the end point 20 units away from the GO on the Z axis (pointing forward)
         points[1] = transform.position + new Vector3(0, 0, 20);
@@ -38,7 +38,7 @@ public class LineRendererSettings : MonoBehaviour
 
     public LayerMask layerMask;
 
-    public void AlignLineRenderer(LineRenderer rend)
+    public bool AlignLineRenderer(LineRenderer rend)
     {
         Ray ray;
         ray = new Ray(transform.position, transform.forward);
@@ -48,26 +48,21 @@ public class LineRendererSettings : MonoBehaviour
         {
             points[1] = transform.forward + new Vector3(0, 0, hit.distance);
            
-           
         }
         else
         {
             points[1] = transform.forward + new Vector3(0, 0, 20);
           
         }
+
         rend.SetPositions(points);
 
-     
-
     }
-
-
-
 
     // Update is called once per frame
     void Update()
     {
-        void AlignLineRenderer(Renderer rend);
+        AlignLineRenderer(rend);
 
         if (AlignLineRenderer(rend) && Input.GetAxis("Submit") > 0)
         {
@@ -82,9 +77,5 @@ public class LineRendererSettings : MonoBehaviour
         }
 
     }
-       
-
-   
-  
 
 }
