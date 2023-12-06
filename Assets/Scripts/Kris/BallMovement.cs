@@ -17,7 +17,7 @@ public class BallMovement : MonoBehaviour
     public float reduceSpeed = 5f;
     public float reduceRotate = 5f;
     private float minSpeed = 5;
-    private float maxSpeed = 40;
+    private float maxSpeed = 20;
 
     private AudioSource golfAudio;
     public AudioClip golfSound;
