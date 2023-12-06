@@ -10,6 +10,9 @@ public class RigController : MonoBehaviour
     [SerializeField] GameObject wristMenu;
     [SerializeField] XRRayInteractor rayInteractor;
 
+    [SerializeField] GameObject leftHandMesh;
+    [SerializeField] GameObject rightHandMesh;
+
     [SerializeField] GameObject bow;
     [SerializeField] GameObject golf;
     [SerializeField] GameObject tennis;
@@ -58,30 +61,42 @@ public class RigController : MonoBehaviour
     public void ActivateBow()
     {
         DeactivateTools();
-
+        leftHandMesh.SetActive(false);
         bow.SetActive(true);
     }
     public void ActivateGolf()
     {
         DeactivateTools();
-
+        rightHandMesh.SetActive(false);
         golf.SetActive(true);
     }
     public void ActivateTennis()
     {
         DeactivateTools();
-
+        rightHandMesh.SetActive(false);
         tennis.SetActive(true);
     }
     public void ActivateBall()
     {
         DeactivateTools();
-
         ball.SetActive(true);
     }
 
-    void DeactivateTools()
+    public void NextButton()
     {
+        // Change location + 1 shot
+    }
+
+    public void ResetButton()
+    {
+        // Return ball + 1 shot
+    }
+
+    public void DeactivateTools()
+    {
+        leftHandMesh.SetActive(true);
+        rightHandMesh.SetActive(true);
+
         bowSelected = false;
         golfSelected = false;
         tennisSelected = false;

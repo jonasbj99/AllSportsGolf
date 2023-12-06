@@ -68,7 +68,7 @@ public class LineRendererSettings : MonoBehaviour
         rend.material.color = rend.startColor;
         return hitBtn;
 
-        btn = hit.collider.gameObject.GetComponent<Button>();
+        //btn = hit.collider.gameObject.GetComponent<Button>();
 
     }
 
