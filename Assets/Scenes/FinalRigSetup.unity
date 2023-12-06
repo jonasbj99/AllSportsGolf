@@ -4669,7 +4669,10 @@ MonoBehaviour:
   golf: {fileID: 828361488}
   tennis: {fileID: 1541080549}
   throwBall: {fileID: 0}
-  ballPrefabs: []
+  ballPrefabs:
+  - {fileID: 6585093375426110559, guid: fa0acd5724520264aa24364b31d5f204, type: 3}
+  - {fileID: 4123271493948327902, guid: a371d202471e2b944b80c5f95265678e, type: 3}
+  - {fileID: 6283939663231192476, guid: 0f5cb2ff4a30c4d44a247196ceacaa5c, type: 3}
   startTransform: {fileID: 0}
 --- !u!1 &1113261284
 GameObject:

@@ -11,19 +11,19 @@ public class RigController : MonoBehaviour
     [SerializeField] XRRayInteractor rayInteractor;
 
     [SerializeField] GameObject leftHandMesh;
-    [SerializeField] GameObject rightHandMesh;
 
     [SerializeField] GameObject bow;
     [SerializeField] GameObject golf;
     [SerializeField] GameObject tennis;
     [SerializeField] GameObject throwBall;
 
-
     [SerializeField] GameObject[] ballPrefabs;
 
     [SerializeField] Transform startTransform;
     public static Transform currentTransform;
     public static Transform previousTransform;
+
+    // tool transform
 
     GameObject ball;
     BallBehavior ballScript;
@@ -78,24 +78,24 @@ public class RigController : MonoBehaviour
     public void ActivateGolf()
     {
         DeactivateTools();
-        rightHandMesh.SetActive(false);
         golf.SetActive(true);
-        // Spawn Ball
+        // Move golf club
+        NewBall(golfInt);
     }
 
     public void ActivateTennis()
     {
         DeactivateTools();
-        rightHandMesh.SetActive(false);
         tennis.SetActive(true);
-        //Spawn Ball
+        // Move tennis bat
+        NewBall(tennisInt);
     }
 
     public void ActivateBall()
     {
         DeactivateTools();
         ball.SetActive(true);
-        //Spawn Ball
+        NewBall(ballInt);
     }
 
     public void NextButton()
@@ -119,7 +119,6 @@ public class RigController : MonoBehaviour
     public void DeactivateTools()
     {
         leftHandMesh.SetActive(true);
-        rightHandMesh.SetActive(true);
 
         bow.SetActive(false);
         golf.SetActive(false);
@@ -129,6 +128,7 @@ public class RigController : MonoBehaviour
 
     public void NewBall(int ballType)
     {
-        Instantiate(ballPrefabs[ballType], previousTransform.position, Quaternion.identity);
+        Vector3 ballOffset = new Vector3(0f, 0.5f, 0f);
+        Instantiate(ballPrefabs[ballType], previousTransform.position + ballOffset, Quaternion.identity);
     }
 }
