@@ -1730,7 +1730,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!114 &941252223
@@ -1745,7 +1745,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d243833a51caa4231951a7c0020eedf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
+  panel: {fileID: 0}
+  img: {fileID: 0}
+  btn: {fileID: 0}
+  rend: {fileID: 941252222}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1019930254
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,7 +3159,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1591945095}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1374368098}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1591945095
 MonoBehaviour:
   m_ObjectHideFlags: 0

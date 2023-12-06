@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LineRendererSettings : MonoBehaviour
 {
-   
+    public GameObject panel;
+    public Image img;
+    public Button btn;
     //Declare a LineRenderer to store the component attached to the GameObject
     [SerializeField] LineRenderer rend;
    
@@ -24,7 +27,7 @@ public class LineRendererSettings : MonoBehaviour
         points = new Vector3[2];
 
         //set the start point of the linerenderer to the position of the gameObject.
-        points[0] = new Vector3.zero;
+        points[0] = Vector3.zero;
 
         //set the end point 20 units away from the GO on the Z axis (pointing forward)
         points[1] = transform.position + new Vector3(0, 0, 20);
@@ -33,13 +36,17 @@ public class LineRendererSettings : MonoBehaviour
         rend.SetPositions(points);
         rend.enabled = true;
 
+        img = panel.GetComponent<Image>();
+
        
     }
 
     public LayerMask layerMask;
 
-    public void AlignLineRenderer(LineRenderer rend)
+    public bool AlignLineRenderer(LineRenderer rend)
     {
+        bool hitBtn = false;
+
         Ray ray;
         ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
@@ -47,27 +54,28 @@ public class LineRendererSettings : MonoBehaviour
         if (Physics.Raycast(ray, out hit, layerMask))
         {
             points[1] = transform.forward + new Vector3(0, 0, hit.distance);
-           
-           
+            btn = hit.collider.gameObject.GetComponent<Button>();
+            hitBtn = true;
         }
         else
         {
             points[1] = transform.forward + new Vector3(0, 0, 20);
+            hitBtn =false;
           
         }
-        rend.SetPositions(points);
 
-     
+        rend.SetPositions(points);
+        rend.material.color = rend.startColor;
+        return hitBtn;
+
+        btn = hit.collider.gameObject.GetComponent<Button>();
 
     }
-
-
-
 
     // Update is called once per frame
     void Update()
     {
-        void AlignLineRenderer(Renderer rend);
+        AlignLineRenderer(rend);
 
         if (AlignLineRenderer(rend) && Input.GetAxis("Submit") > 0)
         {
@@ -82,9 +90,10 @@ public class LineRendererSettings : MonoBehaviour
         }
 
     }
-       
 
-   
-  
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 }
