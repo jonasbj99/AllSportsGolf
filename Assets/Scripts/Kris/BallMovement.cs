@@ -130,6 +130,7 @@ public class BallMovement : MonoBehaviour
             // Adjust ballSpeed based on the velocity of the golf club's swing
             float newBallSpeed = ballSpeed * clubRB.GetComponent<Rigidbody>().velocity.magnitude * ballSpeedMultiplier;
 
+            // Keeps newBallSpeed within the range of minSpeed to maxSpeed
             newBallSpeed = Mathf.Clamp(newBallSpeed, minSpeed, maxSpeed);
 
             // Add force in the direction of the side of the collider with adjusted speed
