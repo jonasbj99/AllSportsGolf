@@ -16,7 +16,7 @@ public class BallMovement : MonoBehaviour
     private bool methodDone = false;
     public float reduceSpeed = 5f;
     public float reduceRotate = 5f;
-    private float minSpeed = 20;
+    private float minSpeed = 5;
     private float maxSpeed = 40;
 
     private AudioSource golfAudio;
@@ -136,6 +136,7 @@ public class BallMovement : MonoBehaviour
             // Add force in the direction of the side of the collider with adjusted speed
             ballRB.AddForce(colliderDirection * newBallSpeed, ForceMode.Impulse);
 
+            // Skal ikke bruges
             // ballRB.AddForce(Vector3.up * ballLift, ForceMode.Impulse);
             // ballRB.AddForce(Vector3.forward * -ballSpeed, ForceMode.Impulse);
 
