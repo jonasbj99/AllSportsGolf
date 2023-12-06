@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishGame : MonoBehaviour
 {
+    public GameObject gameOverMenu;
+
+    public void EnableGameOverMenu()
+    {
+        gameOverMenu.SetActive(true);
+    }
     private bool gameHasEnded = false;
 
     // Start is called before the first frame update
@@ -30,8 +37,16 @@ public class FinishGame : MonoBehaviour
 
     private void GameOver()
     {
+        EnableGameOverMenu();
         Time.timeScale = 0f;
         gameHasEnded = true;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+        gameHasEnded = false;
     }
 
 }
