@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement
 using UnityEngine.UI;
 
 public class LineRendererSettings : MonoBehaviour
 {
+    public GameObject panel;
+    public Image img;
     public Button btn;
     //Declare a LineRenderer to store the component attached to the GameObject
     [SerializeField] LineRenderer rend;
@@ -32,6 +35,8 @@ public class LineRendererSettings : MonoBehaviour
         //finally set the positions array on the LineRenderer to our new values
         rend.SetPositions(points);
         rend.enabled = true;
+
+        img = panel.GetComponent<Image>();
 
        
     }
@@ -63,6 +68,8 @@ public class LineRendererSettings : MonoBehaviour
         rend.material.color = rend.startColor;
         return hitBtn;
 
+        btn = hit.collider.gameObject.GetComponent<Button>();
+
     }
 
     // Update is called once per frame
@@ -82,6 +89,11 @@ public class LineRendererSettings : MonoBehaviour
             }
         }
 
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
