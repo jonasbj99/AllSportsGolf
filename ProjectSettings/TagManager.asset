@@ -12,6 +12,7 @@ TagManager:
   - Arrow
   - Bat
   - GolfClub
+  - Sound
   layers:
   - Default
   - TransparentFX
