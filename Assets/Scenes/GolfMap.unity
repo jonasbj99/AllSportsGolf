@@ -35504,7 +35504,7 @@ GameObject:
   - component: {fileID: 1139717987}
   m_Layer: 0
   m_Name: Winter
-  m_TagString: Sound4
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43846,7 +43846,7 @@ GameObject:
   - component: {fileID: 1358746895}
   m_Layer: 0
   m_Name: Pinguin
-  m_TagString: Sound5
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45909,7 +45909,7 @@ GameObject:
   - component: {fileID: 1417346226}
   m_Layer: 0
   m_Name: Polarbear
-  m_TagString: Sound6
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51034,7 +51034,7 @@ GameObject:
   - component: {fileID: 1566821059}
   m_Layer: 0
   m_Name: Asian
-  m_TagString: Sound3
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52178,7 +52178,7 @@ GameObject:
   - component: {fileID: 1585445414}
   m_Layer: 0
   m_Name: Pond and fish
-  m_TagString: Sound2
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

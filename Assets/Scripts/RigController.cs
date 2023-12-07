@@ -39,8 +39,7 @@ public class RigController : MonoBehaviour
     float tennisOffset = 1.2f;
     float ballOffset = 0.8f;
 
-    // Tennis tee
-    [SerializeField] GameObject tennisTee;
+    [SerializeField] GameObject tee;
     float teeOffset = 0.05f;
 
 
@@ -100,7 +99,6 @@ public class RigController : MonoBehaviour
         tennis.SetActive(true);
         tennis.transform.position = toolTransform.position;
         tennis.transform.rotation = this.transform.rotation;
-        NewTee(tennisTee, teeOffset);
         NewBall(tennisInt, tennisOffset);
     }
 
@@ -140,6 +138,7 @@ public class RigController : MonoBehaviour
     {
         leftHandMesh.SetActive(true);
 
+        tee.SetActive(false);
         bow.SetActive(false);
         golf.SetActive(false);
         tennis.SetActive(false);
@@ -148,12 +147,15 @@ public class RigController : MonoBehaviour
     public void NewBall(int ballType, float offset)
     {
         Vector3 vOffset = new Vector3(0, offset, 0);
+        MoveTee(ballType, vOffset);
         Instantiate(ballPrefabs[ballType], ballSpawn.position + vOffset, Quaternion.identity);
+
     }
 
-    public void NewTee(GameObject tennisTee, float tOffset)
+    public void MoveTee(int ballType, Vector3 offset)
     {
-        Vector3 teeOffset = new Vector3(0, tOffset, 0);
-        Instantiate(tennisTee, ballSpawn.position + teeOffset, Quaternion.identity);
+        Vector3 tOffset = new Vector3(0, teeOffset, 0);
+        tee.transform.position = ballSpawn.position + offset - tOffset;
+        tee.transform.rotation = gameObject.transform.rotation;
     }
 }
