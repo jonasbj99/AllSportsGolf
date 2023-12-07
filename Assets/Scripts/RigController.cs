@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.UI;
+using TMPro;
 
 public class RigController : MonoBehaviour
 {
@@ -37,6 +39,10 @@ public class RigController : MonoBehaviour
     float tennisOffset = 0.6f;
     float ballOffset = 0.8f;
 
+
+    // Shot counting for GameOver menu
+    public TextMeshProUGUI scoreCounter;
+
     private void Awake()
     {
         xriControls = new XRIDefaultInputActions();
@@ -71,6 +77,8 @@ public class RigController : MonoBehaviour
             wristMenu.SetActive(false);
             rayInteractor.enabled = false;
         }
+
+        scoreCounter.text  = shotCount + " SHOTS USED";
     }
 
     public void ActivateGolf()
