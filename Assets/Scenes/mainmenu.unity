@@ -141,8 +141,6 @@ GameObject:
   - component: {fileID: 23412243}
   - component: {fileID: 23412242}
   - component: {fileID: 23412241}
-  - component: {fileID: 23412240}
-  - component: {fileID: 23412239}
   m_Layer: 3
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -150,53 +148,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &23412239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23412238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fcd11c14a5b54741bf81a5b8aa87e06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wristMenu: {fileID: 0}
-  rayInteractor: {fileID: 452366068}
-  leftHandMesh: {fileID: 559553799}
-  golf: {fileID: 0}
-  tennis: {fileID: 0}
-  bow: {fileID: 0}
-  toolTransform: {fileID: 0}
-  ballSpawn: {fileID: 0}
-  ballPrefabs:
-  - {fileID: 6585093375426110559, guid: fa0acd5724520264aa24364b31d5f204, type: 3}
-  - {fileID: 4123271493948327902, guid: a371d202471e2b944b80c5f95265678e, type: 3}
-  - {fileID: 6283939663231192476, guid: 0f5cb2ff4a30c4d44a247196ceacaa5c, type: 3}
-  startTransform: {fileID: 0}
-  tee: {fileID: 0}
-  scoreCounter: {fileID: 0}
---- !u!114 &23412240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23412238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 496880615cd240be960d436c1c8ae570, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 23412247}
-  m_ClimbSettings:
-    m_UseConstant: 1
-    m_ConstantValue:
-      m_AllowFreeXMovement: 1
-      m_AllowFreeYMovement: 1
-      m_AllowFreeZMovement: 1
-    m_Variable: {fileID: 0}
 --- !u!114 &23412241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,12 +1836,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 559553796}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &559553799 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1897133222196087274, guid: 83870ee58534e6649a62e44fcd1190f5,
-    type: 3}
-  m_PrefabInstance: {fileID: 559553796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!135 &559553800
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3239,6 +3184,7 @@ GameObject:
   - component: {fileID: 1374368101}
   - component: {fileID: 1374368100}
   - component: {fileID: 1374368103}
+  - component: {fileID: 1374368104}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -3342,6 +3288,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e87ef1de73a8e4689fa75d7c49a5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1374368104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374368098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 8
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &1426750428
 GameObject:
   m_ObjectHideFlags: 0
