@@ -7,9 +7,30 @@ public class BallBehavior : MonoBehaviour
 {
     [SerializeField] Transform ballTransform;
 
+    bool outOfBounds;
+
     public void BallDestroy()
     {
-        RigController.playerTransform.position = ballTransform.position;
-        Destroy(this.gameObject);
+        if (outOfBounds == false)
+        {
+            RigController.playerTransform.position = ballTransform.position;
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("OutOfBounds"))
+        {
+            outOfBounds = true;
+        }
+        else
+        {
+            outOfBounds = false;
+        }
     }
 }

@@ -23,5 +23,7 @@ public class ArrowController : MonoBehaviour
         arrow.transform.rotation = stringPullVisual.transform.rotation;
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
         rb.AddForce(stringPullVisual.transform.forward * strength * arrowMaxSpeed, ForceMode.Impulse);
+        RigController rigScript = FindObjectOfType<RigController>();
+        rigScript.DeactivateTools();
     }
 }

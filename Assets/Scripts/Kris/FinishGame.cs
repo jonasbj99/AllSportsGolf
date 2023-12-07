@@ -4,30 +4,28 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
+using Unity.XR.CoreUtils;
 
 public class FinishGame : MonoBehaviour
 {
+    public GameObject wristMenu;
     public GameObject gameOverMenu;
+
     private AudioSource endAudio;
     public AudioClip endSound;
     public AudioClip putt;
+    private bool gameHasEnded = false;
 
     public void EnableGameOverMenu()
     {
+        Destroy(wristMenu);
         gameOverMenu.SetActive(true);
     }
-    private bool gameHasEnded = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         endAudio = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other) 
