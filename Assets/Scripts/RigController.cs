@@ -40,7 +40,7 @@ public class RigController : MonoBehaviour
     float ballOffset = 0.8f;
 
     [SerializeField] GameObject tee;
-    float teeOffset = 0.05f;
+    float teeOffset = 0.1f;
 
 
     // Shot counting for GameOver menu
@@ -147,15 +147,19 @@ public class RigController : MonoBehaviour
     public void NewBall(int ballType, float offset)
     {
         Vector3 vOffset = new Vector3(0, offset, 0);
-        MoveTee(ballType, vOffset);
+        if (ballType != 0) 
+        {
+            MoveTee(ballType, offset);
+        }
         Instantiate(ballPrefabs[ballType], ballSpawn.position + vOffset, Quaternion.identity);
 
     }
 
-    public void MoveTee(int ballType, Vector3 offset)
+    public void MoveTee(int ballType, float offset)
     {
-        Vector3 tOffset = new Vector3(0, teeOffset, 0);
-        tee.transform.position = ballSpawn.position + offset - tOffset;
+        tee.SetActive(true);
+        Vector3 tOffset = new Vector3(0, offset/2 - teeOffset, 0);
+        tee.transform.position = ballSpawn.position + tOffset;
         tee.transform.rotation = gameObject.transform.rotation;
     }
 }
