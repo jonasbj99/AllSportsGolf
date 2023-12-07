@@ -867,6 +867,11 @@ PrefabInstance:
       propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4557763709162785756, guid: df498d79c67e42544971b7eeb7ce4950,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4683536674250288638, guid: df498d79c67e42544971b7eeb7ce4950,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2881,6 +2886,11 @@ PrefabInstance:
     - target: {fileID: 4557763709162785756, guid: df498d79c67e42544971b7eeb7ce4950,
         type: 3}
       propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557763709162785756, guid: df498d79c67e42544971b7eeb7ce4950,
+        type: 3}
+      propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4683536674250288638, guid: df498d79c67e42544971b7eeb7ce4950,
