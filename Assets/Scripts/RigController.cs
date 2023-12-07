@@ -62,7 +62,7 @@ public class RigController : MonoBehaviour
 
     void Start()
     {
-        shotCount = 0;
+        shotCount = 1;
         playerTransform = startTransform;
     }
 
@@ -81,7 +81,7 @@ public class RigController : MonoBehaviour
             rayInteractor.enabled = false;
         }
 
-        scoreCounter.text  = shotCount + " SHOTS USED";
+        scoreCounter.text  = "Shots used: " + shotCount;
     }
 
     public void ActivateGolf()
