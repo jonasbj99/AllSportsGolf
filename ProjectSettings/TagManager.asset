@@ -13,11 +13,6 @@ TagManager:
   - Bat
   - GolfClub
   - Sound
-  - Sound2
-  - Sound3
-  - Sound4
-  - Sound5
-  - Sound6
   layers:
   - Default
   - TransparentFX
