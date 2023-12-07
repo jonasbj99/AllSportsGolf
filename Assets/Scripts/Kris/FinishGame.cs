@@ -6,9 +6,12 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEditor;
 using Unity.XR.CoreUtils;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class FinishGame : MonoBehaviour
 {
+    public XRRayInteractor rayInteractor;
+
     public GameObject wristMenu;
     public GameObject gameOverMenu;
 
@@ -21,6 +24,7 @@ public class FinishGame : MonoBehaviour
     {
         Destroy(wristMenu);
         gameOverMenu.SetActive(true);
+        rayInteractor.enabled = true;
     }
 
     void Start()
