@@ -36,7 +36,7 @@ public class RigController : MonoBehaviour
     int ballInt = 2;
 
     float golfOffset = 0.1f;
-    float tennisOffset = 1.5f;
+    float tennisOffset = 1.2f;
     float ballOffset = 0.8f;
 
     // Tennis tee
@@ -123,6 +123,7 @@ public class RigController : MonoBehaviour
         GameObject ball = FindObjectOfType<BallBehavior>().gameObject;
         ballScript = ball.GetComponent<BallBehavior>();
         ballScript.BallDestroy();
+        
         shotCount += 1;
         this.transform.position = new Vector3(playerTransform.position.x, this.transform.position.y, playerTransform.position.z);
     }
