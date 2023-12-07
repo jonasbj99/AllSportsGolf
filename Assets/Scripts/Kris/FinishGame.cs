@@ -49,7 +49,7 @@ public class FinishGame : MonoBehaviour
         //Time.timeScale = 0f;
         gameHasEnded = true;
         endAudio.PlayOneShot(putt, 1f);
-        endAudio.PlayOneShot(endSound, 0.7f);
+        endAudio.PlayOneShot(endSound, 0.4f);
     }
 
     public void RestartGame()
