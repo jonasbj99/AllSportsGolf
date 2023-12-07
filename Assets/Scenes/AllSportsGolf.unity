@@ -27346,7 +27346,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1453427800}
     - target: {fileID: 2082430403462131442, guid: 624b2c4d9c79b6a49894537d89f7854b,
         type: 3}
       propertyPath: rayInteractor
