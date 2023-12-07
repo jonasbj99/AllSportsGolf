@@ -12,20 +12,19 @@ public class RigController : MonoBehaviour
 
     [SerializeField] GameObject leftHandMesh;
 
-    [SerializeField] GameObject bow;
     [SerializeField] GameObject golf;
     [SerializeField] GameObject tennis;
-    [SerializeField] GameObject throwBall;
+    [SerializeField] GameObject bow;
+
+    [SerializeField] Transform toolTransform;
+    [SerializeField] Transform ballSpawn;
 
     [SerializeField] GameObject[] ballPrefabs;
 
     [SerializeField] Transform startTransform;
     public static Transform currentTransform;
-    public static Transform previousTransform;
+    public static Transform playerTransform;
 
-    // tool transform
-
-    GameObject ball;
     BallBehavior ballScript;
 
     int shotCount;
@@ -33,6 +32,10 @@ public class RigController : MonoBehaviour
     int golfInt = 0;
     int tennisInt = 1;
     int ballInt = 2;
+
+    float golfOffset = 0.1f;
+    float tennisOffset = 0.6f;
+    float ballOffset = 0.8f;
 
     private void Awake()
     {
@@ -51,11 +54,13 @@ public class RigController : MonoBehaviour
     void Start()
     {
         shotCount = 0;
-        previousTransform = startTransform;
+        playerTransform = startTransform;
     }
 
     void Update()
     {
+        currentTransform = ballSpawn;
+
         if (xriControls.XRIButtons.X.ReadValue<float>() > 0)
         {
             wristMenu.SetActive(true);
@@ -68,6 +73,24 @@ public class RigController : MonoBehaviour
         }
     }
 
+    public void ActivateGolf()
+    {
+        DeactivateTools();
+        golf.SetActive(true);
+        golf.transform.position = toolTransform.position;
+        golf.transform.rotation = this.transform.rotation;
+        NewBall(golfInt, golfOffset);
+    }
+
+    public void ActivateTennis()
+    {
+        DeactivateTools();
+        tennis.SetActive(true);
+        tennis.transform.position = toolTransform.position;
+        tennis.transform.rotation = this.transform.rotation;
+        NewBall(tennisInt, tennisOffset);
+    }
+
     public void ActivateBow()
     {
         DeactivateTools();
@@ -75,44 +98,27 @@ public class RigController : MonoBehaviour
         bow.SetActive(true);
     }
 
-    public void ActivateGolf()
-    {
-        DeactivateTools();
-        golf.SetActive(true);
-        // Move golf club
-        NewBall(golfInt);
-    }
-
-    public void ActivateTennis()
-    {
-        DeactivateTools();
-        tennis.SetActive(true);
-        // Move tennis bat
-        NewBall(tennisInt);
-    }
-
     public void ActivateBall()
     {
         DeactivateTools();
-        ball.SetActive(true);
-        NewBall(ballInt);
+        NewBall(ballInt, ballOffset);
     }
 
     public void NextButton()
     {
-        ball = FindObjectOfType<BallBehavior>().gameObject;
+        DeactivateTools();
+        GameObject ball = FindObjectOfType<BallBehavior>().gameObject;
         ballScript = ball.GetComponent<BallBehavior>();
         ballScript.BallDestroy();
-        previousTransform = currentTransform;
         shotCount += 1;
-        // TP player
+        this.transform.position = new Vector3(playerTransform.position.x, this.transform.position.y, playerTransform.position.z);
     }
 
     public void ResetButton()
     {
-        ball = FindObjectOfType<BallBehavior>().gameObject;
-        ballScript = ball.GetComponent<BallBehavior>();
-        ballScript.BallReset();
+        DeactivateTools();
+        GameObject ball = FindObjectOfType<BallBehavior>().gameObject;
+        Destroy(ball);
         shotCount += 1;
     }
 
@@ -123,12 +129,11 @@ public class RigController : MonoBehaviour
         bow.SetActive(false);
         golf.SetActive(false);
         tennis.SetActive(false);
-        ball.SetActive(false); 
     }
 
-    public void NewBall(int ballType)
+    public void NewBall(int ballType, float offset)
     {
-        Vector3 ballOffset = new Vector3(0f, 0.5f, 0f);
-        Instantiate(ballPrefabs[ballType], previousTransform.position + ballOffset, Quaternion.identity);
+        Vector3 vOffset = new Vector3(0, offset, 0);
+        Instantiate(ballPrefabs[ballType], ballSpawn.position + vOffset, Quaternion.identity);
     }
 }

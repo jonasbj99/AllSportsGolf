@@ -22,6 +22,6 @@ public class StickingArrow : MonoBehaviour
             arrow.transform.parent = collision.collider.attachedRigidbody.transform;
         }
 
-        // If target = destroy target
+        Destroy(gameObject);
     }
 }

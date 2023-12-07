@@ -8,7 +8,7 @@ public class BallMovement : MonoBehaviour
     public float ballLift = 2f;
     public float ballSpeedMultiplier = 10f;
     private Rigidbody ballRB;
-    public Rigidbody clubRB;
+    Rigidbody clubRB;
     private Vector3 startPos;
     private Vector3 currentPos;
     private Vector3 prevPos;
@@ -34,7 +34,7 @@ public class BallMovement : MonoBehaviour
        startPos = transform.position;
        prevPos = startPos;
        ballRB = GetComponent<Rigidbody>();
-       clubRB = GetComponent<Rigidbody>();
+       clubRB = GameObject.FindGameObjectWithTag("GolfClub").GetComponent<Rigidbody>();
        golfAudio = GetComponent<AudioSource>();
     }
 
@@ -90,10 +90,12 @@ public class BallMovement : MonoBehaviour
         currentPos = transform.position;
 
         // skal rettes/slettes 
+        /*
         if(currentPos.z > 1.1f)
         {
             ResetToStartPosition();
         }
+        */
 
     }
 
