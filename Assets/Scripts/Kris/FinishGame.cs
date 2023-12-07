@@ -12,8 +12,9 @@ public class FinishGame : MonoBehaviour
 {
     public XRRayInteractor rayInteractor;
 
-    public GameObject wristMenu;
     public GameObject gameOverMenu;
+    public GameObject toolMenu;
+    public GameObject controlMenu;
 
     private AudioSource endAudio;
     public AudioClip endSound;
@@ -22,9 +23,9 @@ public class FinishGame : MonoBehaviour
 
     public void EnableGameOverMenu()
     {
-        Destroy(wristMenu);
+        toolMenu.SetActive(false);
+        controlMenu.SetActive(false);
         gameOverMenu.SetActive(true);
-        rayInteractor.enabled = true;
     }
 
     void Start()
