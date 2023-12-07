@@ -14,7 +14,11 @@ public class EnvironmentSound : MonoBehaviour
         {
             audioSource.Play();
         }
+
+        if (other.CompareTag("Player") && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 
-   
 }
