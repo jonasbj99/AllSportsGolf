@@ -10,6 +10,7 @@ public class FinishGame : MonoBehaviour
     public GameObject gameOverMenu;
     private AudioSource endAudio;
     public AudioClip endSound;
+    public AudioClip putt;
 
     public void EnableGameOverMenu()
     {
@@ -44,7 +45,8 @@ public class FinishGame : MonoBehaviour
         EnableGameOverMenu();
         //Time.timeScale = 0f;
         gameHasEnded = true;
-        endAudio.PlayOneShot(endSound, 1f);
+        endAudio.PlayOneShot(putt, 1f);
+        endAudio.PlayOneShot(endSound, 0.7f);
     }
 
     public void RestartGame()
