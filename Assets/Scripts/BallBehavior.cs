@@ -15,6 +15,7 @@ public class BallBehavior : MonoBehaviour
 
     public void StopKinematic()
     {
+        this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<XRGrabInteractable>().throwOnDetach = true;
     }

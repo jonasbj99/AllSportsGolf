@@ -39,6 +39,8 @@ public class RigController : MonoBehaviour
     float tennisOffset = 0.6f;
     float ballOffset = 0.8f;
 
+    float teeOffset = 0.05f;
+
 
     // Shot counting for GameOver menu
     [SerializeField] TextMeshProUGUI scoreCounter;
