@@ -14,11 +14,15 @@ public class EnvironmentSound : MonoBehaviour
         {
             audioSource.Play();
         }
+    }
 
+    void OnTriggerExit(Collider other)
+    {
         if (other.CompareTag("Player") && audioSource.isPlaying)
         {
             audioSource.Stop();
         }
     }
+
 
 }
