@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2672757734214837579}
   m_Layer: 10
   m_Name: StuckArrow
-  m_TagString: Arrow
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
