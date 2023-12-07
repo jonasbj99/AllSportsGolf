@@ -6,7 +6,7 @@ public class BallMovement : MonoBehaviour
 {
     public float ballSpeed = 10f;
     public float ballLift = 2f;
-    public float ballSpeedMultiplier = 10f;
+    // public float ballSpeedMultiplier = 10f;
     private Rigidbody ballRB;
     Rigidbody clubRB;
     private Vector3 startPos;
@@ -130,7 +130,7 @@ public class BallMovement : MonoBehaviour
             Vector3 colliderDirection = rotation * other.transform.forward;
 
             // Adjust ballSpeed based on the velocity of the golf club's swing
-            float newBallSpeed = ballSpeed * clubRB.GetComponent<Rigidbody>().velocity.magnitude * ballSpeedMultiplier;
+            float newBallSpeed = ballSpeed * clubRB.GetComponent<Rigidbody>().velocity.magnitude;
 
             // Keeps newBallSpeed within the range of minSpeed to maxSpeed
             newBallSpeed = Mathf.Clamp(newBallSpeed, minSpeed, maxSpeed);
