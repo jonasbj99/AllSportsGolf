@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/mainmenu.unity
     guid: 9f94da947a58e4bff9ea5a6bbc026223
   - enabled: 1
     path: Assets/Scenes/AllSportsGolf.unity
