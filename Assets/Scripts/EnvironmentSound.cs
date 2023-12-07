@@ -16,5 +16,13 @@ public class EnvironmentSound : MonoBehaviour
         }
     }
 
-   
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
+
+
 }
