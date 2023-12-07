@@ -8,6 +8,8 @@ using TMPro;
 public class FinishGame : MonoBehaviour
 {
     public GameObject gameOverMenu;
+    private AudioSource endAudio;
+    public AudioClip endSound;
 
     public void EnableGameOverMenu()
     {
@@ -18,7 +20,7 @@ public class FinishGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        endAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class FinishGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.CompareTag("GolfBall") && gameHasEnded == false)
+        if(other.CompareTag("Ball") && gameHasEnded == false)
         {
             GameOver();
             
@@ -40,14 +42,15 @@ public class FinishGame : MonoBehaviour
     private void GameOver()
     {
         EnableGameOverMenu();
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         gameHasEnded = true;
+        endAudio.PlayOneShot(endSound, 1f);
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         gameHasEnded = false;
     }
 
