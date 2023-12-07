@@ -81,7 +81,7 @@ public class RigController : MonoBehaviour
             rayInteractor.enabled = false;
         }
 
-        //scoreCounter.text  = shotCount + " SHOTS USED";
+        scoreCounter.text  = shotCount + " SHOTS USED";
     }
 
     public void ActivateGolf()

@@ -11,26 +11,7 @@ public class BallBehavior : MonoBehaviour
 
     public void BallDestroy()
     {
-        if (outOfBounds == false)
-        {
-            RigController.playerTransform.position = ballTransform.position;
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("OutOfBounds"))
-        {
-            outOfBounds = true;
-        }
-        else
-        {
-            outOfBounds = false;
-        }
+        RigController.playerTransform.position = ballTransform.position;
+        Destroy(this.gameObject);
     }
 }
