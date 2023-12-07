@@ -27517,6 +27517,7 @@ GameObject:
   - component: {fileID: 762314217}
   - component: {fileID: 762314216}
   - component: {fileID: 762314215}
+  - component: {fileID: 762314219}
   m_Layer: 5
   m_Name: WristMenu
   m_TagString: Untagged
@@ -27628,6 +27629,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &762314219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762314213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e87ef1de73a8e4689fa75d7c49a5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &765832577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29560,7 +29573,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015187212}
+      - m_Target: {fileID: 762314219}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PreviousScene
         m_Mode: 1
@@ -36115,7 +36128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1015187211}
-  - component: {fileID: 1015187212}
   m_Layer: 5
   m_Name: GameOverMenu
   m_TagString: Untagged
@@ -36146,18 +36158,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1015187212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015187210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57e87ef1de73a8e4689fa75d7c49a5c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1015545088
 GameObject:
   m_ObjectHideFlags: 0
@@ -73512,7 +73512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015187212}
+      - m_Target: {fileID: 762314219}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ReloadScene
         m_Mode: 1
