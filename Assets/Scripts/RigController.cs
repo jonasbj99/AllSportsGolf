@@ -41,7 +41,7 @@ public class RigController : MonoBehaviour
 
 
     // Shot counting for GameOver menu
-    public TextMeshProUGUI scoreCounter;
+    [SerializeField] TextMeshProUGUI scoreCounter;
 
     private void Awake()
     {
@@ -78,7 +78,7 @@ public class RigController : MonoBehaviour
             rayInteractor.enabled = false;
         }
 
-        scoreCounter.text  = shotCount + " SHOTS USED";
+        //scoreCounter.text  = shotCount + " SHOTS USED";
     }
 
     public void ActivateGolf()
