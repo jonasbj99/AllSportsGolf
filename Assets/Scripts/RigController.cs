@@ -36,7 +36,7 @@ public class RigController : MonoBehaviour
     int ballInt = 2;
 
     float golfOffset = 0.1f;
-    float tennisOffset = 0.6f;
+    float tennisOffset = 1.5f;
     float ballOffset = 0.8f;
 
     // Tennis tee
