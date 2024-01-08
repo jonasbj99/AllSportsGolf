@@ -6,7 +6,6 @@ public class BallMovement : MonoBehaviour
 {
     public float ballSpeed = 10f;
     public float ballLift = 2f;
-    // public float ballSpeedMultiplier = 10f;
     private Rigidbody ballRB;
     Rigidbody clubRB;
     private Vector3 startPos;
@@ -22,11 +21,8 @@ public class BallMovement : MonoBehaviour
     private AudioSource golfAudio;
     public AudioClip golfSound;
 
-    //indsæt i GameManager script
     public static Vector3 golfBallPos;
     
-
-    // Start is called before the first frame update
     void Start()
     {
        startPos = transform.position;
@@ -36,13 +32,12 @@ public class BallMovement : MonoBehaviour
        golfAudio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         if(transform.position.y < 0.5f && ballRB.velocity.magnitude > 0.4f)
         {
-            // Slows down speed of ball if ball is lower than 0.5f on y-axis and if the speed of the ball is more than 0.4f
+            // Slows down speed of ball if ball is lower than 0.5f on y-axis
+            // and if the speed of the ball is more than 0.4f
             Vector3 reduceSpeedForce = -ballRB.velocity.normalized * reduceSpeed;
             ballRB.AddForce(reduceSpeedForce, ForceMode.Acceleration);
         }
@@ -65,6 +60,7 @@ public class BallMovement : MonoBehaviour
         {
             isBallMoving = true;
         }
+
         // Measurres distance of the ball from start to its current position
         if(isBallMoving == true && methodDone == false && ballRB.velocity.magnitude < 0.01f)
         {
@@ -104,9 +100,6 @@ public class BallMovement : MonoBehaviour
 
             // Add force in the direction of the side of the collider with adjusted speed
             ballRB.AddForce(colliderDirection * newBallSpeed, ForceMode.Impulse);
-
-            // Measures speed added to ball when hit by the golf club
-            Debug.Log("Ball speed: " + newBallSpeed);
             
             methodDone = false;
 

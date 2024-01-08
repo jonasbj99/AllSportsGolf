@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class EnvironmentSound : MonoBehaviour
 {
-
     public AudioSource audioSource;
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,6 +21,4 @@ public class EnvironmentSound : MonoBehaviour
             audioSource.Stop();
         }
     }
-
-
 }

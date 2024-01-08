@@ -38,7 +38,6 @@ public class FinishGame : MonoBehaviour
         if(other.CompareTag("Ball") && gameHasEnded == false)
         {
             GameOver();
-            
             Debug.Log("Game Over");
         }
     }
@@ -46,7 +45,6 @@ public class FinishGame : MonoBehaviour
     private void GameOver()
     {
         EnableGameOverMenu();
-        //Time.timeScale = 0f;
         gameHasEnded = true;
         endAudio.PlayOneShot(putt, 1f);
         endAudio.PlayOneShot(endSound, 0.4f);
@@ -55,8 +53,6 @@ public class FinishGame : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //Time.timeScale = 1f;
         gameHasEnded = false;
     }
-
 }

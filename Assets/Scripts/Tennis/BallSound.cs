@@ -6,14 +6,13 @@ public class BallSound : MonoBehaviour
 {
     public AudioSource ballHit;
     public AudioClip ballSound;
-    // Start is called before the first frame update
+
     void Start()
     {
         ballHit = GetComponent<AudioSource>();
         ballHit.clip = ballSound;
     }
 
-    // Update is called once per frame
     void Update()
     {
         

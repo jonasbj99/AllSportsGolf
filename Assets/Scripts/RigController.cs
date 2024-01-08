@@ -29,6 +29,7 @@ public class RigController : MonoBehaviour
 
     BallBehavior ballScript;
 
+    [SerializeField] TextMeshProUGUI scoreCounter;
     int shotCount;
 
     int golfInt = 0;
@@ -41,10 +42,6 @@ public class RigController : MonoBehaviour
 
     [SerializeField] GameObject tee;
     float teeOffset = 0.1f;
-
-
-    // Shot counting for GameOver menu
-    [SerializeField] TextMeshProUGUI scoreCounter;
 
     private void Awake()
     {
