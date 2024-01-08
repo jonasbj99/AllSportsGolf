@@ -24,9 +24,7 @@ public class BallMovement : MonoBehaviour
 
     //indsæt i GameManager script
     public static Vector3 golfBallPos;
-
     
-
 
     // Start is called before the first frame update
     void Start()
@@ -41,17 +39,6 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(Input.GetKeyDown(KeyCode.Space))
-        {
-            ballRB.AddForce(Vector3.up * ballLift, ForceMode.Impulse);
-            ballRB.AddForce(Vector3.forward * -ballSpeed, ForceMode.Impulse);
-        }*/
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            // Only for testing
-            ResetToStartPosition();
-        }
 
         if(transform.position.y < 0.5f && ballRB.velocity.magnitude > 0.4f)
         {
@@ -72,8 +59,6 @@ public class BallMovement : MonoBehaviour
             // Stops the ball completely (both speed and rotation) after its speed goes below 0.5f
             ballRB.velocity = Vector3.zero;
             ballRB.angularVelocity = Vector3.zero;
-
-            
         }
 
         if(ballRB.velocity.magnitude > 1f && currentPos.z != startPos.z)
@@ -84,27 +69,9 @@ public class BallMovement : MonoBehaviour
         if(isBallMoving == true && methodDone == false && ballRB.velocity.magnitude < 0.01f)
         {
             MeasureDistanceOfBall();
-            
         }
 
         currentPos = transform.position;
-
-        // skal rettes/slettes 
-        /*
-        if(currentPos.z > 1.1f)
-        {
-            ResetToStartPosition();
-        }
-        */
-
-    }
-
-    public void ResetToStartPosition()
-    {
-        transform.position = startPos;
-        ballRB.velocity = Vector3.zero;
-        ballRB.angularVelocity = Vector3.zero;
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -138,17 +105,12 @@ public class BallMovement : MonoBehaviour
             // Add force in the direction of the side of the collider with adjusted speed
             ballRB.AddForce(colliderDirection * newBallSpeed, ForceMode.Impulse);
 
-            // Skal ikke bruges
-            // ballRB.AddForce(Vector3.up * ballLift, ForceMode.Impulse);
-            // ballRB.AddForce(Vector3.forward * -ballSpeed, ForceMode.Impulse);
-
             // Measures speed added to ball when hit by the golf club
             Debug.Log("Ball speed: " + newBallSpeed);
             
             methodDone = false;
 
-            golfAudio.PlayOneShot(golfSound, 0.6f);
-            
+            golfAudio.PlayOneShot(golfSound, 0.6f);  
         }
     }
 
