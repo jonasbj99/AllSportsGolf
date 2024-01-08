@@ -13,11 +13,6 @@ public class BallSound : MonoBehaviour
         ballHit.clip = ballSound;
     }
 
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision other) 
     {
         if(other.gameObject.CompareTag("Bat"))
